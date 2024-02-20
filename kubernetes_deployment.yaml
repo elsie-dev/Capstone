@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: capstone-project
+  template:
+    metadata:
+      labels:
+        app: capstone-project
+    spec:
+      containers:
+      - name: capstone-project
+        image: your-account-id.dkr.ecr.your-region.amazonaws.com/your-repository:tag
