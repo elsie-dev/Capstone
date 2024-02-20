@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: capstoneservice
+  name: capstone
 spec:
   selector:
     app: capstone-project
