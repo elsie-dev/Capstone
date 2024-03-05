@@ -1,0 +1,16 @@
+---
+- name: Deploy Application to EKS
+  hosts: localhost
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Authenticate with ECR
+      command: "{{ lookup('env', 'AWS_ECR_REGISTRY') | b64decode }}"
+      environment:
+        AWS_DEFAULT_REGION: "us-east-1"
+
+    - name: Deploy application using Kubernetes manifests
+      k8s:
+        state: "present"
+        definition: "/Users/emomondi/Kubernetes/kubernetes_deployment.yaml"
+      
