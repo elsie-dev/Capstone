@@ -1,0 +1,41 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: capstone-deployment
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: capstone-project
+#   template:kubectl apply -f example-pod.yaml
+
+#     metadata:
+#       labels:
+#         app: capstone-project
+#     spec:
+#       containers:
+#       - name: capstone-project
+#         image: 120651511769.dkr.ecr.us-west-2.amazonaws.com/microservice-demo
+
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: capstone-deployment
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: capstone-project
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: capstone-project
+    spec:
+      containers:
+      - image: 120651511769.dkr.ecr.us-west-2.amazonaws.com/microservice-demo
+        imagePullPolicy: Always
+        name: capstone-project
+        ports:
+        - containerPort: 80
