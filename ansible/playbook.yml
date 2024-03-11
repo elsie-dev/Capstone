@@ -13,4 +13,17 @@
       k8s:
         state: "present"
         definition: "/Users/emomondi/Kubernetes/kubernetes_deployment.yaml"
-      
+
+    - name: Update kubeconfig for EKS cluster
+      command: "aws eks update-kubeconfig --region us-east-1 --name capstone"
+      environment:
+        AWS_DEFAULT_REGION: "eu-central-1"
+
+    - name: Get deployments
+      command: "kubectl get deployments"
+
+    - name: Get pods
+      command: "kubectl get pods"
+
+    - name: Port-forward to pod
+      command: "kubectl port-forward capstone 8080:80"
