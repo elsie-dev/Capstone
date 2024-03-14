@@ -6,15 +6,15 @@
 
 - Terraform: Used to create eks cluster using terraform (**terraform init and terraform plan**)
 
-1. Configure kubectl to Connect to an EKS Cluster
+1. Configured kubectl to Connect to an EKS Cluster
 
 2. Configured kubectl to use AWS Kuberenetes cluster
 
 3. Created deployment.yaml file and deployed to manifest file.
 
-4. Deploying and verifying the application
+4. Deployed and verified the application
 
-5. Creating port-forward to access the deployed application
+5. Created port-forward to access the deployed application
 
 
 ## PUSHING DOCKER IMAGE TO AWS ECR
