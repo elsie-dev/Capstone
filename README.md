@@ -1,5 +1,5 @@
 
-# DEPLOYING DOCKER IMAGE TO AWS EKS (Terraform, ECR,IAM)
+## DEPLOYING DOCKER IMAGE TO AWS EKS (Terraform, ECR,IAM)
  - Build the Dockerimage and pushed it to AWS ECR using Github actions
 
 - Used AWS to set up credentials **aws configure**
@@ -17,12 +17,12 @@
 5. Created port-forward to access the deployed application
 
 
-## PUSHING DOCKER IMAGE TO AWS ECR
+### PUSHING DOCKER IMAGE TO AWS ECR
 
 From the dockerfile under microservice application, Github actions workflow file builds the image and pushes tol AWS ECR repository
 
 
-## ANSIBLE VAULT AND PLAYBOOK
+### ANSIBLE VAULT AND PLAYBOOK
 
 Adding prometheus and grafana using Helm
 
@@ -43,10 +43,10 @@ kubectl port-forward prometheus-kube-prometheus-stack-prometheus-0 9090
 
 **Install Grafana**
 helm install grafana grafana/grafana --namespace monitoring
+```
 
+### MONITOR EKS ClUSTER USING PROMETHEUS.
 
-## MONITOR EKS ClUSTER USING PROMETHEUS.
-
-## SETTING UP LET'S ENCRPT CERTIFICATE
+### SETTING UP LET'S ENCRPT CERTIFICATE
 - Ingress Controller (ingress.yaml)
 - Obtain SSL Certficate
