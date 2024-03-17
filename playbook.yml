@@ -1,0 +1,23 @@
+---
+- name: Deploy and expose Kubernetes application
+  hosts: localhost  # Assuming you are running Ansible locally
+  tasks:
+    - name: Change directory to Kube
+      ansible.builtin.shell:
+        cmd: cd Kube
+
+    - name: Apply Kubernetes deployment
+      ansible.builtin.shell:
+        cmd: kubectl apply -f kubernetes_deployment.yaml
+
+    - name: Get Kubernetes deployments
+      ansible.builtin.shell:
+        cmd: kubectl get deployments
+
+    - name: Expose Kubernetes deployment
+      ansible.builtin.shell:
+        cmd: kubectl expose deployment capstone-project --port=80 --target-port=3000 --type=LoadBalancer
+
+    - name: Verify deployment works
+      ansible.builtin.shell:
+        cmd: kubectl get services
