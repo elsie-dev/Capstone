@@ -22,9 +22,8 @@
 From the dockerfile under microservice application, Github actions workflow file builds the image and pushes tol AWS ECR repository
 
 Output: 
-![Deployed Image]("Capstone/blob/main/screenshots/capstone2image.jpeg")
 
-
+![ Deployed Image](https://github.com/elsie-dev/Capstone/blob/main/screenshots/capstone%20image.jpeg)
 
 
 
@@ -56,4 +55,9 @@ helm install grafana grafana/grafana --namespace monitoring
 ## SETTING UP LET'S ENCRPT CERTIFICATE
 - Ingress Controller (ingress.yaml)
 - Obtain SSL Certficate
+```
+
+**Output:**
+
+![Image](https://github.com/elsie-dev/Capstone/blob/main/screenshots/capstone2image.jpeg)
 
